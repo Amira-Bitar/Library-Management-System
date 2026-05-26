@@ -29,10 +29,6 @@ const ReviewSchema = new mongoose.Schema(
       trim: true,
     },
 
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
   },
   { timestamps: true }
 );
