@@ -1,0 +1,22 @@
+const express = require("express");
+
+const router = express.Router();
+
+const {
+  create{{pascalCase name}},
+  getAll{{pascalCase name}}s,
+  get{{pascalCase name}}ById,
+  update{{pascalCase name}},
+  delete{{pascalCase name}},
+} = require("../controllers/{{camelCase name}}Controller");
+
+router.route("/")
+  .post(create{{pascalCase name}})
+  .get(getAll{{pascalCase name}}s);
+
+router.route("/:id")
+  .get(get{{pascalCase name}}ById)
+  .put(update{{pascalCase name}})
+  .delete(delete{{pascalCase name}});
+
+module.exports = router;
