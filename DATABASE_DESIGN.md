@@ -2,9 +2,7 @@
 
 # Library Management System — Database Design
 
----
-
-## Part 1 — System Design
+***
 
 ## Collection: Users
 
@@ -57,7 +55,7 @@ Users (single collection)
 
 |--- Manager (discriminator)
 
----
+***
 
 ## Collection: Materials
 
@@ -122,7 +120,7 @@ Materials (single collection)
 
 |--- Map (discriminator)
 
----
+***
 
 ## Collection: Loans
 
@@ -163,7 +161,7 @@ Stores all borrowing and return operations for library materials.
 
 - actualReturnDate remains empty until the material is returned.
 
----
+***
 
 ## Collection: Reservations
 
@@ -188,7 +186,7 @@ Stores reservations for materials that are currently unavailable.
 - notifiedWhenAvailable
 - autoCancelAfter
 
----
+***
 
 ## Collection: Reviews
 
@@ -216,5 +214,4 @@ Stores member ratings and reviews for library materials.
 Users ── Loans ── Materials
 
    └── Reservations ──┘
-   
    └── Reviews ──┘
