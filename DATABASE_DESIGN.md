@@ -46,11 +46,18 @@ Stores all system users including members, librarians, and managers.
 
 ### Relationship Fields
 -  No direct relationships in this collection
+
 Users (single collection)
+
 |--- Base User (shared fields)
+
 |--- Member (discriminator)
+
 |--- Librarian (discriminator)
+
 |--- Manager (discriminator)
+
+---
 
 ## Collection: Materials
 
@@ -106,10 +113,16 @@ Stores books and other library materials.
 - No direct relationships in this collection
 
 Materials (single collection)
+
 |--- Book (discriminator)
+
 |---Magazine (discriminator)
+
 |--- CD (discriminator)
+
 |--- Map (discriminator)
+
+---
 
 ## Collection: Loans
 
@@ -150,6 +163,8 @@ Stores all borrowing and return operations for library materials.
 
 - actualReturnDate remains empty until the material is returned.
 
+---
+
 ## Collection: Reservations
 
 ### Purpose
@@ -173,6 +188,7 @@ Stores reservations for materials that are currently unavailable.
 - notifiedWhenAvailable
 - autoCancelAfter
 
+---
 
 ## Collection: Reviews
 
@@ -198,5 +214,7 @@ Stores member ratings and reviews for library materials.
 
 ---
 Users ── Loans ── Materials
+
    └── Reservations ──┘
+   
    └── Reviews ──┘
