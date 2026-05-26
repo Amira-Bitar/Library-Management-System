@@ -4,16 +4,16 @@
 
 ---
 
-# Part 1 — System Design
+## Part 1 — System Design
 
-# Collection: Users
+## Collection: Users
 
-## Purpose
+### Purpose
 Stores all system users including members, librarians, and managers.
 
 ---
 
-## Data Fields
+### Data Fields
 - name
 - email
 - phone
@@ -21,30 +21,30 @@ Stores all system users including members, librarians, and managers.
 
 ---
 
-## Problem-Solving Fields
+### Problem-Solving Fields
 - password 
 - accountType (member | librarian | manager)
 
 ---
 
-## Member-Specific Fields
+### Member-Specific Fields
 - address
 - dateOfBirth
 - membershipNumber
 
 ---
 
-## Librarian-Specific Fields
+### Librarian-Specific Fields
 - responsibleDepartment
 
 ---
 
-## Manager-Specific Fields
+### Manager-Specific Fields
 - uses shared fields only
 
 ---
 
-## Relationship Fields
+### Relationship Fields
 -  No direct relationships in this collection
 Users (single collection)
 |--- Base User (shared fields)
@@ -52,14 +52,14 @@ Users (single collection)
 |--- Librarian (discriminator)
 |--- Manager (discriminator)
 
-# Collection: Materials
+## Collection: Materials
 
-## Purpose
+### Purpose
 Stores books and other library materials.
 
 ---
 
-## Data Fields
+### Data Fields
 - _id
 - title
 - materialType (book | magazine | cd | map)
@@ -90,19 +90,19 @@ Stores books and other library materials.
 
 ---
 
-## Magazine-Specific Fields
+### Magazine-Specific Fields
 - issueNumber
 - month
 - year
 
 ---
 
-## Problem-Solving Fields
+### Problem-Solving Fields
 - availableCopies
 
 ---
 
-## Relationship Fields
+### Relationship Fields
 - No direct relationships in this collection
 
 Materials (single collection)
@@ -111,14 +111,14 @@ Materials (single collection)
 |--- CD (discriminator)
 |--- Map (discriminator)
 
-# Collection: Loans
+## Collection: Loans
 
-## Purpose
+### Purpose
 Stores all borrowing and return operations for library materials.
 
 ---
 
-## Data Fields
+### Data Fields
 - loanDate
 - dueDate
 - actualReturnDate (optional)
@@ -126,21 +126,21 @@ Stores all borrowing and return operations for library materials.
 
 ---
 
-## Relationship Fields
+### Relationship Fields
 - memberId (references Users)
 - materialId (references Materials)
 - librarianId (references Users)
 
 ---
 
-## Problem-Solving Fields
+### Problem-Solving Fields
 - status (active | returned | overdue | cancelled)
 - paymentStatus (paid | unpaid)
 - totalFineAmount
 
 ---
 
-## Business Rules
+### Business Rules
 
 - A loan becomes overdue when:
   actualReturnDate > dueDate
@@ -150,50 +150,50 @@ Stores all borrowing and return operations for library materials.
 
 - actualReturnDate remains empty until the material is returned.
 
-# Collection: Reservations
+## Collection: Reservations
 
-## Purpose
+### Purpose
 Stores reservations for materials that are currently unavailable.
 
 ---
 
-## Data Fields
+### Data Fields
 - reservedAt
 
 ---
 
-## Relationship Fields
+### Relationship Fields
 - memberId (references Users)
 - materialId (references Materials)
 
 ---
 
-## Problem-Solving Fields
+### Problem-Solving Fields
 - queuePriority
 - notifiedWhenAvailable
 - autoCancelAfter
 
 
-# Collection: Reviews
+## Collection: Reviews
 
-## Purpose
+### Purpose
 Stores member ratings and reviews for library materials.
 
 ---
 
-## Data Fields
+### Data Fields
 - rating (1–5 stars)
 - reviewText (optional)
 - createdAt
 ---
 
-## Relationship Fields
+### Relationship Fields
 - memberId (references Users)
 - materialId (references Materials)
 
 ---
 
-## Problem-Solving Fields
+### Problem-Solving Fields
  No direct Problem-Solving  in this collection 
 
 ---

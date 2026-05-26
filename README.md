@@ -19,12 +19,12 @@ npm install
     npm run start for production
 ```
 ##   Design Document  
-
-[DATABASE_DESIGN.md](./DATABASE_DESIGN.md)
+    click here to open Design Document :
+        [DATABASE_DESIGN.md](./DATABASE_DESIGN.md)
 
 ##   POSTMAN Documentation
-  
-    https://documenter.getpostman.com/view/34426542/2sBXwmPsjv
+    click here to open POSTMAN Documentation:
+        [view API Docs](https://documenter.getpostman.com/view/34426542/2sBXwmPsjv)
 
 ##  User
 
